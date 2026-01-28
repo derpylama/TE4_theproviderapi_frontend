@@ -16,6 +16,7 @@ function VerifyToken({token}) {
 
     if (token != "") {
         fetch("https://tp1.api.ntigskovde.se/api/auth/verify", {
+            method: "POST",
             headers: {"Authorization": "Bearer " + token}
         })
         .then((response) => response.json())
