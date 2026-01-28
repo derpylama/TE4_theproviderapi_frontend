@@ -1,12 +1,46 @@
+a {
+    color: rgb(202, 202, 202);
+}
+a :hover {
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
 .blog-container {
     display: flex;
+    flex-direction: column;
+    gap: 5rem;
     max-width: 1200px;
     min-width: 60%;
-    background-color: blue;
+    background-color: rgb(57, 75, 56);
     margin-top: 4rem
 }
 
-.bloc-card {
+.blog-card {
+    background-color: rgb(79, 107, 77);
     padding: 1rem;
+    max-width: 100%;
     
+}
+.blog-card-text-container {
+
+    padding: 0 2rem;
+    max-width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.blog-card-user-container {
+    margin-top: 1rem;
+    border-top: 0.2rem solid black;
 }
