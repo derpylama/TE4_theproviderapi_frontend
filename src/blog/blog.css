@@ -1,0 +1,12 @@
+.blog-container {
+    display: flex;
+    max-width: 1200px;
+    min-width: 60%;
+    background-color: blue;
+    margin-top: 4rem
+}
+
+.bloc-card {
+    padding: 1rem;
+    
+}

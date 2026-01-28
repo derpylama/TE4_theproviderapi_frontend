@@ -1,5 +1,11 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   text-align: center;
+
 }
 
+
+.content-container {
+  display: flex;
+  justify-content: center;
+}

@@ -1,12 +1,13 @@
 import './topbar.css'
-
+import reactLogo from '../assets/react.svg'
 
 function NavButton(prop) {
     
     return ( 
 
-        <button onClick={() => {alert("ButtonPressed")}} className='topbar-button'>
-            {prop.text}
+        <button onClick={() => {alert("ButtonPressed")}} className='topbar-nav-button'>
+            <p>{prop.text}</p>
+
         </button>
 
     )
@@ -19,7 +20,11 @@ function Topbar() {
 
     return (
         <div className="topbar-container">
-            <NavButton text="Login"/>
+            
+                <img src={reactLogo} className="topbar-logo"  alt="React logo" />
+
+            <NavButton text="Home"/>
+            <button className='topbar-button'>Logon</button>
         </div>
     )
 }
