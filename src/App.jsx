@@ -27,6 +27,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<BlogMainPage></BlogMainPage>}></Route>
+        <Route path='/wiki' element={<BlogMainPage></BlogMainPage>}></Route>
       </Routes>
     </BrowserRouter>
 
