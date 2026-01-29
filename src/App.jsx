@@ -8,12 +8,12 @@ import {Blog, BlogMain} from './blog/blog'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-function BlogMainPage() {
+function BlogMainPage({blogs}) {
   return (
     <>
       <Topbar></Topbar>
       <div className='content-container'>
-        <BlogMain></BlogMain>
+        <BlogMain blogs={blogs}></BlogMain>
       </div>
 
     </>
@@ -45,6 +45,7 @@ function  App() {
     //const [token, SetToken] = useState(null)
     const [userToken, SetUserToken] = useState("")
     const { token, loading, error} = useAuthToken() 
+    const [contentArray, setContentArray] = useState([])
 
 
     useEffect(() => {
@@ -56,11 +57,13 @@ function  App() {
 
         
         async function run() {
+
             VerifyToken({ token });
-            var contentType = CONTENT.WIKI
+            var contentType = CONTENT.BLOG
             
             var content = await GetAll({ token, userToken, CONTENT:contentType });
-            console.log()
+            setContentArray(content.blogs)
+
             
             UserLogin({
                 SetUserToken: SetUserToken,
@@ -78,7 +81,7 @@ function  App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<BlogMainPage></BlogMainPage>}></Route>
+        <Route path='/' element={<BlogMainPage blogs={contentArray}></BlogMainPage>}></Route>
         <Route path='/wiki' element={<BlogMainPage></BlogMainPage>}></Route>
         <Route path='/blog/:id' element={<BlogPageFunc></BlogPageFunc>}></Route>
       </Routes>
