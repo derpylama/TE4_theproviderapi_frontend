@@ -23,42 +23,41 @@ function BlogMainPage() {
 
 import SideBar from './sidebar/sidebar'
 
-import { GetToken, VerifyToken } from "./api/token_handler.js"
+import { useAuthToken, VerifyToken } from "./api/token_handler.js"
 import { UserLogin } from './api/user_handler.js'
+import { CONTENT, GetAll } from './api/content_handler.js'
 
 function  App() {
     
-    const [token, SetToken] = useState(null)
+    //const [token, SetToken] = useState(null)
     const [userToken, SetUserToken] = useState("")
+    const { token, loading, error} = useAuthToken() 
+
 
     useEffect(() => {
-      let cancelled = false;
-  
-      async function loadToken() {
-        const t = await GetToken();
-        if (!cancelled) {
-            SetToken(t);
-        }
-      }
-  
-      loadToken();
-  
-      return () => {
-        cancelled = true;
-      };
+
     }, []);
 
     useEffect(() => {
-      if (!token) return;
-  
-      VerifyToken({ token });
-  
-      UserLogin({
-        SetUserToken: setUserToken,
-        username: "admin",
-        password: "admin",
-        token
-      });
+        if (!token) return;
+
+        
+        async function run() {
+            VerifyToken({ token });
+            var contentType = CONTENT.WIKI
+            
+            var content = await GetAll({ token, userToken, CONTENT:contentType });
+            console.log()
+            
+            UserLogin({
+                SetUserToken: SetUserToken,
+                username: "admin",
+                password: "admin",
+                token
+            });
+        }
+    
+        run();
     }, [token]);
 
 
