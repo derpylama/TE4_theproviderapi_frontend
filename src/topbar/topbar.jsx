@@ -45,6 +45,9 @@ function Topbar() {
             
 
             <NavButton text="Home"/>
+            <nav>
+                Na
+            </nav>
             <button className='topbar-button'>Logon</button>
         </div>
     )

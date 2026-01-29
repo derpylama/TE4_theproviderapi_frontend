@@ -28,29 +28,38 @@ import { UserLogin } from './api/user_handler.js'
 
 function  App() {
     
-    const [token, SetToken] = useState("")
+    const [token, SetToken] = useState(null)
     const [userToken, SetUserToken] = useState("")
 
     useEffect(() => {
-        if (token == "") {
-            GetToken({SetToken})
+      let cancelled = false;
+  
+      async function loadToken() {
+        const t = await GetToken();
+        if (!cancelled) {
+            SetToken(t);
         }
-        
-    }, [])
+      }
+  
+      loadToken();
+  
+      return () => {
+        cancelled = true;
+      };
+    }, []);
 
     useEffect(() => {
-        
-        if (token != "") {
-            console.log(token)
-            VerifyToken({token})
-
-            var username = "admin"
-            var password = "admin"
-            UserLogin({SetUserToken, username, password, token })
-        }
-    }, [token])
-    
-
+      if (!token) return;
+  
+      VerifyToken({ token });
+  
+      UserLogin({
+        SetUserToken: setUserToken,
+        username: "admin",
+        password: "admin",
+        token
+      });
+    }, [token]);
 
 
   return (
