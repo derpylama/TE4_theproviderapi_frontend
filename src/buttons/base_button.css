@@ -1,0 +1,19 @@
+
+
+.button-body {
+    background-color: #5a5a5a;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 8rem;
+    height: 4rem;
+    margin: 1rem;
+    border-radius: 0.8rem;
+}
+
+.button-body:hover {
+    cursor: pointer;
+    background-color: #383838;
+}
