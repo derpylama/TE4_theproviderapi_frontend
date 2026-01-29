@@ -6,10 +6,70 @@ a :hover {
 }
 
 
+
+.blog-background {
+    background-color: var(--primary-blog-bg-color)
+}
+.text-blog-background {
+    background-color: var(--text-blog-bg-color);
+}
+
+/*---------------------------------------*/
+
+
+
+.blog-post-container{
+    max-width: 50em;
+    padding: var(--primary-element-padding);
+
+}
+
+.blog-post-text-container {
+    border-radius: 0.5rem;
+    border: solid var(--primary-border-width) var(--primary-border-color);
+    padding: var(--primary-element-padding);
+}
+
+.blog-post-text-container > p {
+    font-size: 1.2rem;
+}
+
+.blog-post-header {
+    display: block;
+    font-size: 3em;
+    margin-top: 0.67rem;
+    margin-bottom: 1.67rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+
+    letter-spacing: 0.1rem;
+    text-align: center;
+    border-bottom: solid var(--primary-border-width) var(--primary-border-color);
+}
+
+.blog-post-info {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+
+
+
 .blog-main-container {
     padding-top: 2rem;
     gap: 4rem;
 }
+
+
+
+
+
+
+
+
+
 
 
 /*-------------*/

@@ -5,7 +5,8 @@ button {
 
 .topbar-container {
     position: fixed;
-    background-color: black;
+    background-color: var(--primary-tb-color);
+
     height: 4rem;
     width: 100%;
     display: flex;
