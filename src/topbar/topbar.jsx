@@ -24,6 +24,9 @@ function Topbar() {
                 <img src={reactLogo} className="topbar-logo"  alt="React logo" />
 
             <NavButton text="Home"/>
+            <nav>
+                Na
+            </nav>
             <button className='topbar-button'>Logon</button>
         </div>
     )

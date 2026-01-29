@@ -1,9 +1,9 @@
-
+const BASE_URL = "https://tp1.api.ntigskovde.se/api/people/";
 
 async function UserLogin({SetUserToken, username, password, token}) {
     var passwordHash = await hashPassword(password)
 
-    fetch("https://tp1.api.ntigskovde.se/api/people/cred/login", {
+    fetch( BASE_URL + "cred/login", {
         method: "POST",
         headers: {"Authorization": "Bearer " + token},
         body: JSON.stringify({
@@ -16,6 +16,20 @@ async function UserLogin({SetUserToken, username, password, token}) {
         SetUserToken(data.token)
     })
 
+}
+
+async function UserLogout({ token, userToken}) {
+    fetch(BASE_URL + "cred/logout", {
+        method: "POST",
+        headers: {"Authorization": "Bearer " + token,
+            "X-Person-Token": userToken
+
+        },
+
+    }).then((response) => response.json())
+    .then((data) => {
+        
+    })
 }
 
 async function hashPassword(password) {
@@ -33,7 +47,9 @@ async function hashPassword(password) {
       .join("");
   
     return hashHex;
-  }
+}
+
+
 
 
 export { UserLogin }

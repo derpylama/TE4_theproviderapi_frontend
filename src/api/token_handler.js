@@ -1,14 +1,13 @@
 
-function GetToken({SetToken}) {
+async function GetToken() {
     fetch("https://tp1.api.ntigskovde.se/api/auth/login", {
         method: "POST",
         body: JSON.stringify({ username: "emilemil", password: "emilemil"})
     })
     .then((response) => response.json())
     .then((data) => {
-        SetToken(data.token)
-        
-        
+        console.log("Fetched token:", data.token); 
+        return data.token
     })
 }
 
