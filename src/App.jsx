@@ -4,10 +4,22 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Topbar from './topbar/topbar'
 
-import Blog from './blog/blog'
+import {Blog, BlogMain} from './blog/blog'
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function BlogMainPage() {
+  return (
+    <>
+      <Topbar></Topbar>
+      <div className='content-container'>
+        <BlogMain></BlogMain>
+      </div>
+
+    </>
+  )
+}
+function BlogPageFunc() {
   return (
     <>
       <Topbar></Topbar>
@@ -25,6 +37,7 @@ import SideBar from './sidebar/sidebar'
 
 import { GetToken, VerifyToken } from "./api/token_handler.js"
 import { UserLogin } from './api/user_handler.js'
+
 
 function  App() {
     
@@ -68,6 +81,7 @@ function  App() {
       <Routes>
         <Route path='/' element={<BlogMainPage></BlogMainPage>}></Route>
         <Route path='/wiki' element={<BlogMainPage></BlogMainPage>}></Route>
+        <Route path='/blog/:id' element={<BlogPageFunc></BlogPageFunc>}></Route>
       </Routes>
     </BrowserRouter>
 
