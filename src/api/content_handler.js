@@ -5,11 +5,12 @@ const CONTENT = {
     USERS: "users"
 }
 
-async function GetAll( {token, userToken, CONTENT } ) {
+async function GetAll( {token, userToken, CONTENT, signal } ) {
     const response = await fetch(BASE_URL + CONTENT + "/get-all", {
         method: "GET",
         headers: {"Authorization": "Bearer " + token,
         },
+        signal
     })
 
     const data = await response.json();

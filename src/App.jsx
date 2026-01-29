@@ -55,21 +55,21 @@ function  App() {
     useEffect(() => {
         if (!token) return;
 
-        
+        const controller = new AbortController();
+
         async function run() {
 
             VerifyToken({ token });
             var contentType = CONTENT.BLOG
             
-            var content = await GetAll({ token, userToken, CONTENT:contentType });
-            setContentArray(content.blogs)
-
+            var content = await GetAll({ token, userToken, CONTENT:contentType, signal: controller.signal });
             
             UserLogin({
                 SetUserToken: SetUserToken,
                 username: "admin",
                 password: "admin",
-                token
+                token,
+                signal: controller.signal
             });
         }
     

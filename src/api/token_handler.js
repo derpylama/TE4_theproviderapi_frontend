@@ -11,16 +11,13 @@ async function GetToken() {
     return data.token; 
 }
 
-async function VerifyToken({token}) {
+async function VerifyToken({token, signal}) {
 
     if (token != "") {
-        fetch("https://tp1.api.ntigskovde.se/api/auth/verify", {
+        const respons = await fetch("https://tp1.api.ntigskovde.se/api/auth/verify", {
             method: "POST",
-            headers: {"Authorization": "Bearer " + token}
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data)
+            headers: {"Authorization": "Bearer " + token},
+            signal
         })
 
     }    

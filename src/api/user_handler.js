@@ -1,6 +1,6 @@
 const BASE_URL = "https://tp1.api.ntigskovde.se/api/people/";
 
-async function UserLogin({SetUserToken, username, password, token}) {
+async function UserLogin({SetUserToken, username, password, token, signal}) {
     var passwordHash = await hashPassword(password)
 
     fetch( BASE_URL + "cred/login", {
@@ -9,7 +9,8 @@ async function UserLogin({SetUserToken, username, password, token}) {
         body: JSON.stringify({
             username: username,
             passwordhash: passwordHash
-        })
+        }),
+        signal,
     }).then((response) => response.json())
     .then((data) => {
         console.log(data)
