@@ -8,6 +8,12 @@ import {Blog, BlogMain} from './blog/blog'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import SideBar from './sidebar/sidebar'
+
+import { useAuthToken, VerifyToken } from "./api/token_handler.js"
+import { UserLogin } from './api/user_handler.js'
+import { CONTENT, GetAll } from './api/content_handler.js'
+
 function BlogMainPage({blogs}) {
   return (
     <>
@@ -33,11 +39,6 @@ function BlogPageFunc() {
 
 
 
-import SideBar from './sidebar/sidebar'
-
-import { useAuthToken, VerifyToken } from "./api/token_handler.js"
-import { UserLogin } from './api/user_handler.js'
-import { CONTENT, GetAll } from './api/content_handler.js'
 
 
 function  App() {
@@ -63,6 +64,7 @@ function  App() {
             var contentType = CONTENT.BLOG
             
             var content = await GetAll({ token, userToken, CONTENT:contentType, signal: controller.signal });
+            setContentArray(content.blogs)
             
             UserLogin({
                 SetUserToken: SetUserToken,
