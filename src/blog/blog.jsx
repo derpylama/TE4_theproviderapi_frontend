@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom'
 import './blog.css'
+import '../index.css'
+import '../App.css'
+
+import {PrimaryAuthorHeader} from '../primarycomponents/text_component.jsx'
+
+
+
 
 function BlogPostCard(props) {
     return (
@@ -35,9 +42,40 @@ function BlogCard(props) {
     )
 }
 
+export function BlogPost() {
+    return (
+        <div className='blog-post-container'>
+            <div className='blog-post-header'>
+                TV-Krabbor
+            </div>
+            <PrimaryAuthorHeader text={"Smoke"}></PrimaryAuthorHeader>
+            <div className='blog-post-info'>
+                06-24-2025
+            </div>
+            <div className='blog-post-text-container text-background'>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat ipsum eu nisi interdum, non ultricies neque tincidunt. Nunc ac odio arcu. Mauris mattis vulputate lectus pretium feugiat. Vestibulum nec elementum tortor. Sed eu dapibus tellus, gravida tristique orci. Morbi fermentum ex nisi, eget maximus ex dapibus vitae. Duis gravida lobortis interdum. Nam porttitor pharetra gravida. Nullam viverra ultrices nunc sed convallis. Nunc suscipit blandit nisi, in rutrum quam laoreet at. Ut quis diam a dolor scelerisque tempor. Integer sagittis vitae erat rutrum scelerisque.<br/>
+
+                Curabitur ligula dui, dictum non neque nec, lobortis vehicula leo. Vivamus scelerisque et purus nec dictum. Nulla commodo et enim id lacinia. Praesent ligula mi, interdum ac tincidunt ac, convallis efficitur quam. Nam lobortis dignissim lacus at rhoncus. Fusce mattis dignissim est a cursus. Sed hendrerit nec nunc in dignissim. Vestibulum magna nunc, feugiat sit amet consectetur a, dignissim in nunc. Sed ullamcorper metus vestibulum tellus ornare posuere vel id tortor.<br/>
+
+                Maecenas ornare auctor felis, at luctus neque mollis quis. Ut vel convallis nulla. Vivamus hendrerit gravida neque, ut gravida ante tincidunt et. Donec ipsum massa, luctus non dignissim at, euismod ut purus. Donec hendrerit fermentum blandit. Fusce semper auctor nibh, in vehicula risus semper a. Nam tellus nisi, lacinia in nulla eget, accumsan faucibus lacus. Vestibulum sodales sodales justo. Donec sit amet tincidunt libero, sed ullamcorper nunc. Donec ut urna sagittis, commodo mi sed, semper justo.<br/>
+
+                In blandit lobortis lectus, vel aliquet ipsum ullamcorper non. Quisque tincidunt enim ut neque vestibulum, at commodo tellus cursus. Ut ultricies nisi ac quam mollis, ac rhoncus urna luctus. Fusce in faucibus urna. Nunc pellentesque nunc nisl, ut aliquet tellus blandit eget. Sed auctor lacinia viverra. Sed rutrum porta ante vel mollis. Praesent aliquet, sapien in faucibus semper, nulla lacus interdum dolor, in tempus felis nisi et enim. Duis aliquet accumsan rutrum. Nunc dignissim erat vitae auctor tincidunt. Proin in venenatis lorem, non rutrum tortor. Cras consequat dui quam, eu congue lacus fringilla interdum. Mauris quis lorem mattis, malesuada orci vel, dignissim tellus. Cras tincidunt rutrum nulla, eget iaculis lacus auctor vel.<br/>
+
+                Pellentesque fringilla eget turpis a semper. Vestibulum porta gravida semper. Vestibulum placerat sem eget gravida fermentum. Sed ultricies faucibus orci, cursus venenatis neque iaculis mollis. Aenean dictum nibh quis elementum bibendum. Donec commodo magna at est mattis lacinia. In tristique gravida facilisis. Maecenas vulputate diam odio, nec accumsan metus fringilla eget. Aliquam gravida sollicitudin gravida. Donec interdum dapibus est, quis rutrum eros dictum ut. Integer vel semper mi, in hendrerit mi. Curabitur lacinia faucibus laoreet. 
+                </p>
+            </div>
+
+
+        </div>
+    )
+}
+
+
+
 export function Blog() {
     return (
-        <div className='blog-post-card-container'>
+        <div className='blog-post-card-container blog-background'>
             <BlogPostCard postTitle="Det stora äventyret om Tintin´s strid mot Sakarias." postUser="Tintin" postContent="58 .
 EXT. OCEAN/ROWBOAT - DAY
 ANGLEON: HADDOCKis rowing .. . cold and exhausted . TINTIN and
@@ -63,7 +101,7 @@ export function BlogMain({blogs}) {
             )
             )
             }
-            <BlogCard blogTitle="Bloggen om nordpolen" blogUser="Elf" blogDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam diam  purus, tristique nec scelerisque ac, lacinia sit amet lorem.  Pellentesque ut tortor lobortis, facilisis est ut, commodo ligula.  Curabitur purus massa, tristique a imperdiet id, rhoncus id libero. In  hac habitasse platea dictumst. Aenean maximus metus nec tellus eleifend, sed varius risus scelerisque. Suspendisse vitae diam a elit mattis  finibus. Proin elementum lorem id tristique accumsan. Sed volutpat  lectus lectus. Vestibulum ante ipsum primis in faucibus orci luctus et  ultrices posuere cubilia curae; Nam fringilla molestie gravida.  Vestibulum ornare risus ipsum, eget ullamcorper purus blandit pretium.  Aliquam pulvinar hendrerit elit, ac vulputate lorem lacinia quis. Etiam risus orci, facilisis et efficitur dictum, tincidunt placerat  nibh. Curabitur a viverra lacus. Vestibulum id mollis massa. Proin  consectetur magna egestas arcu iaculis, quis malesuada massa tristique.  Phasellus vitae tincidunt est. Phasellus suscipit hendrerit nisi, a  pulvinar diam. Quisque nunc dui, molestie nec malesuada at, iaculis vel  elit. Etiam dictum malesuada nibh eget hendrerit. Nam venenatis id ante  sed convallis. Aliquam laoreet molestie luctus. Maecenas finibus a nibh  eu bibendum."></BlogCard>
+
 
         
         </div>

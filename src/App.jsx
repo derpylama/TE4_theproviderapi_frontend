@@ -4,8 +4,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 // Component imports
 import './App.css'
+import './index.css'
+import './blog/blog.css'
+
 import Topbar from './topbar/topbar'
-import {Blog, BlogMain} from './blog/blog'
+
+import {Blog, BlogMain, BlogPost} from './blog/blog'
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+import SideBar from './sidebar/sidebar'
+
+
+
 import "./login_page/login.jsx"
 
 //Function / hook imports
@@ -18,7 +29,7 @@ function BlogMainPage({blogs}) {
   return (
     <>
       <Topbar></Topbar>
-      <div className='content-container'>
+      <div className='content-container blog-background'>
         <BlogMain blogs={blogs}></BlogMain>
       </div>
 
@@ -37,7 +48,17 @@ function BlogPageFunc() {
   )
 }
 
+function BlogPostFunc() {
+  return (
+    <>
+      <Topbar></Topbar>
+      <div className='content-container background'>
+        <BlogPost></BlogPost>
+      </div>
 
+    </>
+  )
+}
 
 
 
