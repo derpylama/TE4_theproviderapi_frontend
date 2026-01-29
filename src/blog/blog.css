@@ -6,29 +6,32 @@ a :hover {
 }
 
 
+.blog-main-container {
+    padding-top: 2rem;
+    gap: 4rem;
+}
 
 
+/*-------------*/
 
-
-
-
-.blog-container {
+.blog-post-card-container {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    align-items: center;
     max-width: 1200px;
     min-width: 60%;
     background-color: rgb(57, 75, 56);
-    margin-top: 4rem
 }
 
-.blog-card {
+
+.blog-post-card {
     background-color: rgb(79, 107, 77);
-    padding: 1rem;
-    max-width: 100%;
+    padding: 1rem 2rem;
+    max-width: 75%;
     
 }
-.blog-card-text-container {
+.blog-post-card-text-container {
 
     padding: 0 2rem;
     max-width: 100%;
@@ -40,7 +43,47 @@ a :hover {
     text-overflow: ellipsis;
 }
 
-.blog-card-user-container {
+.blog-post-card-user-container {
     margin-top: 1rem;
     border-top: 0.2rem solid black;
 }
+
+/*-----------------*/
+.blog-card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.blog-card {
+    flex-grow: 1;
+    box-sizing: border-box;
+    background-color: rgb(79, 107, 77);
+    padding: 1rem;
+    flex-basis: 40%;
+
+
+}
+
+.blog-card-top-container {
+    display: flex;
+    justify-content: space-between;
+}
+.blog-card-top-container > a > h2, .blog-card-top-container > p {
+    margin: 0;
+}
+
+.blog-card-text-container {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+
+
