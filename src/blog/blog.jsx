@@ -93,7 +93,6 @@ finds ... a BOTTLE of RUM"></BlogPostCard>
 }
 
 export function BlogMain({blogs}) {
-    console.log(blogs)
     return (
         <div className="blog-card-container">
             {blogs.map((blog, index) => (
@@ -101,9 +100,6 @@ export function BlogMain({blogs}) {
             )
             )
             }
-
-
-        
         </div>
     )
 }

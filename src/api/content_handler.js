@@ -1,20 +1,14 @@
 const BASE_URL = "https://tp1.api.ntigskovde.se/api/";
-const CONTENT = {
-    WIKI: "wiki",
-    BLOG: "blog",
-    USERS: "users"
-}
 
-async function GetAll( {token, userToken, CONTENT, signal } ) {
-    console.log()
-    const response = await fetch(BASE_URL + CONTENT + "/get-all", {
+
+async function GetAll( {token, userToken, content, signal } ) {
+    const response = await fetch(BASE_URL + content + "/get-all", {
         method: "GET",
         headers: {"Authorization": "Bearer " + token,
         },
         signal
     })
 
-    
     return await response.json();
 }
 
@@ -31,4 +25,6 @@ async function BlogPosts( limit, offset, tag ) {
     return data;
 }
 
-export { GetAll, CONTENT }
+
+
+export { GetAll }

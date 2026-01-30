@@ -8,9 +8,6 @@ import { useState } from "react"
 import { UserLogin } from "../api/user_handler.js"
 
 async function LoginOnClick({ usernameValue, passwordValue, token, SetUserToken }) {
-    console.log(usernameValue)
-    console.log(token)
-
     const controller = new AbortController();
     
     await UserLogin({SetUserToken, username:usernameValue, password:passwordValue, token:token, signal:controller.signal})

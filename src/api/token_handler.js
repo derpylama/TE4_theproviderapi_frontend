@@ -17,10 +17,48 @@ async function VerifyToken({token, signal}) {
         const respons = await fetch("https://tp1.api.ntigskovde.se/api/auth/verify", {
             method: "POST",
             headers: {"Authorization": "Bearer " + token},
-            signal
+            signal: signal
         })
 
     }    
+}
+
+function useVerify({ token }) {
+    const [tokenStatus, setTokentatus] = useState(false)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        if (!token) {
+            setLoading(false)
+            return
+        }
+    }, [])    
+        
+    const controller = new AbortController();
+    
+    useEffect(() => {
+        async function verify() {
+            try {
+                setLoading(true)
+                const status = await VerifyToken({ token, signal: controller.signal })
+                
+            } catch (err) {
+                if (err.name) {
+                    setError(err)
+                }
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        verify()
+
+        // when the fetch completes
+        return () => {
+            controller.abort();
+        };
+    }, [])
 }
 
 function useAuthToken() {
@@ -46,4 +84,4 @@ function useAuthToken() {
     return { token, loading, error }
 }
 
-export {useAuthToken, VerifyToken}
+export {useAuthToken, VerifyToken, useVerify}

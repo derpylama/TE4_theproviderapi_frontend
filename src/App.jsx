@@ -19,9 +19,9 @@ import SideBar from './sidebar/sidebar'
 import "./login_page/login.jsx"
 
 //Function / hook imports
-import { useAuthToken, VerifyToken } from "./api/token_handler.js"
+import { useAuthToken, VerifyToken, useVerify } from "./api/token_handler.js"
 import { UserLogin } from './api/user_handler.js'
-import { CONTENT, GetAll } from './api/content_handler.js'
+import { GetAll } from './api/content_handler.js'
 import LoginPage from './login_page/login.jsx'
 
 function BlogMainPage({blogs}) {
@@ -64,35 +64,25 @@ function BlogPostFunc() {
 function  App() {
     
     //const [token, SetToken] = useState(null)
-    const [userToken, SetUserToken] = useState("")
+    const [userToken, SetUserToken] = useState()
     const { token, loading, error} = useAuthToken() 
     const [contentArray, setContentArray] = useState([])
 
 
     useEffect(() => {
+        if (token == null) return;
 
-    }, []);
 
-    useEffect(() => {
-        if (!token) return;
-
-        const controller = new AbortController();
 
         async function run() {
 
-            VerifyToken({ token });
-            var contentType = CONTENT.BLOG
+            // await VerifyToken({ token, signal: controller.signal });
             
-            var content = await GetAll({ token, userToken, CONTENT:contentType, signal: controller.signal });
-            setContentArray(content.blogs)
+            // var content = await GetAll({ token, userToken, content:"blog", signal: controller.signal });
             
-            // UserLogin({
-            //     SetUserToken: SetUserToken,
-            //     username: "admin",
-            //     password: "admin",
-            //     token,
-            //     signal: controller.signal
-            // });
+            // if (content.blogs != undefined) {
+            //     setContentArray(content.blogs)
+            // }
         }
     
         run();
