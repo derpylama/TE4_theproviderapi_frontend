@@ -11,3 +11,11 @@ export function PrimaryAuthorHeader({text}) {
         </div>
     )
 }
+
+export function SmallAuthorHeader({text}) {
+    return (
+        <div className="small-author-header">
+            {text}
+        </div>
+    )
+}
