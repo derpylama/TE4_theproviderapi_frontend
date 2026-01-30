@@ -13,7 +13,6 @@ async function UserLogin({SetUserToken, username, password, token, signal}) {
         signal,
     }).then((response) => response.json())
     .then((data) => {
-        console.log(data)
         SetUserToken(data.token)
     })
 
