@@ -11,7 +11,6 @@ import Topbar from './topbar/topbar'
 
 import {Blog, BlogMain, BlogPost} from './blog/blog'
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import SideBar from './sidebar/sidebar'
 
