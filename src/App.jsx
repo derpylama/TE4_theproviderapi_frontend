@@ -21,7 +21,7 @@ import "./login_page/login.jsx"
 //Function / hook imports
 import { useAuthToken, VerifyToken, useVerify } from "./api/token_handler.js"
 import { UserLogin } from './api/user_handler.js'
-import { GetAll } from './api/content_handler.js'
+import { GetAll, useFetch } from './api/content_handler.js'
 import LoginPage from './login_page/login.jsx'
 
 function BlogMainPage({blogs}) {
@@ -63,15 +63,31 @@ function BlogPostFunc() {
 
 function  App() {
     
-    //const [token, SetToken] = useState(null)
     const [userToken, SetUserToken] = useState()
-    const { token, loading, error} = useAuthToken() 
+    const { token, authLoading, authError} = useAuthToken() 
     const [contentArray, setContentArray] = useState([])
+    const {data, loading, error} = useFetch({
+        url: "https://tp1.api.ntigskovde.se/api/blog/get-all",
+        requestType: "GET",
+
+        asPerson: false,
+        
+
+    })
+
+    useEffect(() => {
+
+        if (data == null) return;
+        console.log(data.blogs)
+        setContentArray(data.blogs)
+        
+    }, [data])
 
 
     useEffect(() => {
         if (token == null) return;
 
+        
 
 
         async function run() {
