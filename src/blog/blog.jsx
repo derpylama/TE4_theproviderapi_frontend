@@ -48,10 +48,11 @@ export function BlogPost() {
             <div className='blog-post-header'>
                 TV-Krabbor
             </div>
-            <PrimaryAuthorHeader text={"Smoke"}></PrimaryAuthorHeader>
-            <div className='blog-post-info'>
-                06-24-2025
+            <div className='blog-post-info-container'>
+                <PrimaryAuthorHeader text={"Smoke"}></PrimaryAuthorHeader>
+                <div className='blog-post-info'>06-24-2025</div>
             </div>
+
             <div className='blog-post-text-container text-background'>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras placerat ipsum eu nisi interdum, non ultricies neque tincidunt. Nunc ac odio arcu. Mauris mattis vulputate lectus pretium feugiat. Vestibulum nec elementum tortor. Sed eu dapibus tellus, gravida tristique orci. Morbi fermentum ex nisi, eget maximus ex dapibus vitae. Duis gravida lobortis interdum. Nam porttitor pharetra gravida. Nullam viverra ultrices nunc sed convallis. Nunc suscipit blandit nisi, in rutrum quam laoreet at. Ut quis diam a dolor scelerisque tempor. Integer sagittis vitae erat rutrum scelerisque.<br/>

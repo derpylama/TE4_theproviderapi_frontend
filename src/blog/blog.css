@@ -38,7 +38,7 @@ a :hover {
     display: block;
     font-size: 3em;
     margin-top: 0.67rem;
-    margin-bottom: 1.67rem;
+
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
@@ -53,6 +53,15 @@ a :hover {
     margin-right: 0;
 }
 
+.blog-post-info-container {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    gap: 1.5rem;
+    color: rgba(0,0,0,0.5);
+    font-weight: 600;
+    padding: 0 var(--primary-element-padding);
+}
 
 
 

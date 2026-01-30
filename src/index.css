@@ -4,7 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -16,15 +15,22 @@
 
 
 
-  --primary-border-color: rgb(200, 255, 0);
-  --primary-tb-color: rgb(100, 51, 165);
-  --primary-bg-color: rgb(141, 179, 141);
-  --text-bg-color: rgb(75, 97, 75);
+  --primary-bg-color: #FAF9F9;
+  --primary-tb-color: #88D030;
+  --text-bg-color: #ebeaeaff;
+  --primary-border-color: #88D030;
+  --accent-bg-color: #ccccccc0;
+
+  --primary-font-color: rgb(0,0,0,0.87);
+
 
   --primary-border-width: 0.2rem;
 
   --primary-element-padding: 2rem;
 
+  --primary-border-radius: 0.4rem;
+
+  color: var(--primary-font-color);
 }
 
 a {

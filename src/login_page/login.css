@@ -16,6 +16,7 @@ input {
     font-size: 1.3rem;
     border-radius: 0.8rem;
     border: 0;
+    box-sizing: border-box;
 }
 
 .login-con {
