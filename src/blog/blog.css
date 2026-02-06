@@ -1,8 +1,8 @@
 a {
-    color: rgb(202, 202, 202);
+    color: rgb(0, 0, 0);
 }
 a :hover {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 
@@ -71,18 +71,6 @@ a :hover {
     gap: 4rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-/*-------------*/
-
 .blog-post-card-container {
     margin-top: 2rem;
     display: flex;
@@ -97,6 +85,7 @@ a :hover {
 .blog-post-card {
     background-color: rgb(79, 107, 77);
     padding: 1rem 2rem;
+    margin: 1rem;
     max-width: 75%;
     
 }
@@ -130,7 +119,7 @@ a :hover {
 .blog-card {
     flex-grow: 1;
     box-sizing: border-box;
-    background-color: rgb(79, 107, 77);
+    background-color: var(--accent-bg-color);
     padding: 1rem;
     flex-basis: 40%;
 

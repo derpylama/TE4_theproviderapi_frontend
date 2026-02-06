@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  background-color: #242424;
+  background-color: #e9e9e9;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,14 +12,11 @@
   -moz-osx-font-smoothing: grayscale;
 
 
-
-
-
   --primary-bg-color: #FAF9F9;
-  --primary-tb-color: #88D030;
+  --primary-tb-color: #bbb6af;
   --text-bg-color: #ebeaeaff;
-  --primary-border-color: #88D030;
-  --accent-bg-color: #ccccccc0;
+  --primary-border-color: #272727;
+  --accent-bg-color: #cccccc;
 
   --primary-font-color: rgb(0,0,0,0.87);
 

@@ -1,7 +1,12 @@
+import { useEffect, useState } from "react";
+import { useFetch } from "./content_handler";
+import { useAuthToken } from "./token_handler";
+
 const BASE_URL = "https://tp1.api.ntigskovde.se/api/people/";
 
 async function UserLogin({SetUserToken, username, password, token, signal}) {
     var passwordHash = await hashPassword(password)
+    
 
     fetch( BASE_URL + "cred/login", {
         method: "POST",
@@ -14,6 +19,10 @@ async function UserLogin({SetUserToken, username, password, token, signal}) {
     }).then((response) => response.json())
     .then((data) => {
         SetUserToken(data.token)
+        sessionStorage.setItem("x-person-token", data.token)
+        sessionStorage.setItem("userID", data.personID)
+        console.log(data)
+
     })
 
 }
@@ -48,7 +57,6 @@ async function hashPassword(password) {
   
     return hashHex;
 }
-
 
 
 

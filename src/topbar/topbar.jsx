@@ -1,27 +1,26 @@
 import './topbar.css'
 import reactLogo from '../assets/react.svg'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavStyle = ({ isActive }) => ({
   color: isActive ? '#007bff' : '#ffffffff',
-  textDecoration: isActive ? 'none' : 'underline',
+  textDecoration: isActive ? 'none' : 'none',
   fontWeight: isActive ? 'bold' : 'normal'
 
 });
 
 
 
-function NavButton(prop) {
-    
-    return ( 
+// function NavButton(prop) {
+//     return ( 
         
-        <button onClick={() => {alert("ButtonPressed")}} className='topbar-nav-button'>
-            <p>{prop.text}</p>
+//         <button onClick={() => {alert("ButtonPressed")}} className='topbar-nav-button'>
+//             <p>{prop.text}</p>
 
-        </button>
+//         </button>
 
-    )
-}
+//     )
+// }
 
 
 
@@ -44,11 +43,9 @@ function Topbar() {
             </nav>
             
 
-            <NavButton text="Home"/>
-            <nav>
-                Na
-            </nav>
-            <button className='topbar-button'>Logon</button>
+            <div className='topbar-button'>
+                <Link to="/login">Login</Link>
+            </div>
         </div>
     )
 }

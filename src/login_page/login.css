@@ -4,8 +4,8 @@
     flex-direction: column;
 
     width: 35%;
-    height: 50%;
-    background-color: #3a3a3a;
+    height: fit-content;
+    background-color: var(--accent-bg-color);
     border-radius: 0.8rem;
     
 }

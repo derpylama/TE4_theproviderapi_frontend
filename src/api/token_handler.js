@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 async function GetToken() {
     const response = await fetch("https://tp1.api.ntigskovde.se/api/auth/login", {
         method: "POST",
-        body: JSON.stringify({ username: "emilemil", password: "emilemil"})
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username: "emilemil", password: "emilemil"}),
+        
     })
 
     const data = await response.json();
@@ -66,10 +70,12 @@ function useAuthToken() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const controller = new AbortController();
+
     useEffect(() => {
         async function loadToken() {
             try {
-                const t = await GetToken();
+                const t = await GetToken({ signal: controller.signal});
                 setToken(t)
             } catch (err) {
                 setError(err)
@@ -84,4 +90,4 @@ function useAuthToken() {
     return { token, loading, error }
 }
 
-export {useAuthToken, VerifyToken, useVerify}
+export {useAuthToken, VerifyToken, useVerify, GetToken}

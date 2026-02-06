@@ -21,30 +21,16 @@ function SideBar({barContent}) {
             <div className="sidebar">
                 <div className="search-bar">
                     <input type="text"></input>
-                    {
-                        /*
-                        barContent.map((child) => (
-                            
-                            <div className="sidebar-content">
-                                <h3>{child.title}</h3>
-                                <p>
-                                    {child.author}
-                                </p>
 
-
-                            </div>
-                        ))
-                        */
-                    }
                 </div>
                 <div className="sidebar-content">
                     <div className="sidebar-result">
-                        <PrimaryAuthorHeader text="Dn blåa planeten"></PrimaryAuthorHeader>
-                        <SmallAuthorHeader text="JamesCameron"></SmallAuthorHeader>
+                        <PrimaryAuthorHeader text="Nya trall Skruvar i lager"></PrimaryAuthorHeader>
+                        
                     </div>
                     <div className="sidebar-result">
-                        <PrimaryAuthorHeader text="Dn blåa planeten"></PrimaryAuthorHeader>
-                        <SmallAuthorHeader text="JamesCameron"></SmallAuthorHeader>
+                        <PrimaryAuthorHeader text="Nya storlekar av reglar"></PrimaryAuthorHeader>
+                        
                     </div>
                 </div>
 

@@ -14,17 +14,22 @@ button {
 }
 
 .topbar-button {
+    display: flex;
     border-radius: 0.5rem;
-    background-color: brown;
+    background-color: rgb(112, 101, 101);
     height: 100%;
+    height: 60%;
+    align-self: center;
+    align-items: center;
+    margin-left: 60%;
+    padding: 0.5rem;
 }
-
-
 
 
 nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .nav-link {
@@ -44,19 +49,9 @@ nav {
 }
 
 .nav-link:hover > *{
-    border-color: green;
+    border-color: #007bff;
 }
 
 .topbar-logo {
     padding: 0 1rem;
 }
-
-
-
-
-
-
-
-
-
-
